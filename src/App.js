@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BsFillCalendarDateFill } from "react-icons/bs";
+import { BsFillCalendar2CheckFill } from "react-icons/bs";
 import {Container, Col, Row } from 'react-bootstrap';
 import Search from './components/Search';
+import AddAppointment from './components/AddAppointment';
 
 function App() {
   return (
@@ -9,36 +10,19 @@ function App() {
       <Container>
         <Row>
           <Col >
-            <h1 className='text-center fw-light mt-3'><BsFillCalendarDateFill />Appointments </h1>
+            <h1 className='text-center fw-light mt-3'><BsFillCalendar2CheckFill /> Appointments </h1>
           </Col>
         </Row>
+
+        <Row className = "justify-content-center">
+          <AddAppointment />
+        </Row >
+
         <Row className='justify-content-center'>
           <Col md='4'> 
             <Search />
           </Col>
-        </Row>
-        <Row>    
-          <Col md={3}>
-            <h3>
-              Hello. bootstrap!
-            </h3>
-            </Col>
-            <Col md={3}>
-            <h3>
-              Hello. bootstrap!
-            </h3>
-            </Col>
-            <Col md={3}>
-            <h3>
-              Hello. bootstrap!
-            </h3>
-            </Col>
-            <Col md={3}>
-            <h3>
-              Hello. bootstrap!
-            </h3>
-            </Col>
-        </Row>
+        </Row> 
       </Container>
     
     </div>
