@@ -1,0 +1,14 @@
+const AddAppointment = () => {
+	return (
+
+		<>
+			<Col
+		</>
+	)
+
+
+
+}
+
+
+
