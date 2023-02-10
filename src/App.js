@@ -3,11 +3,26 @@ import { BsFillCalendar2CheckFill } from "react-icons/bs";
 import {Container, Col,Card, Row, ListGroup } from 'react-bootstrap';
 import Search from './components/Search';
 import AddAppointment from './components/AddAppointment';
-import appointList from "./data.json";
 import AppointmentInfo from './components/AppointmentInfo';
+import { useCallback, useEffect,useState } from 'react';
 
 
 function App() {
+
+  let [appointList, setAppointmentList] = useState([]);
+
+  const fetchData = useCallback(() => {
+    fetch('./data.json')
+    .then(response => response.json())
+    .then(data => {
+      setAppointmentList(data)
+    });
+  }, [])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
+
   return (
     <div className="App">
       <Container>
@@ -31,7 +46,8 @@ function App() {
               <Card className="mb-3">
                 <Card.Header>Appointments</Card.Header>
                 <ListGroup variant="flush">
-                  //sending data to the components
+                  {/*sending data to the components*/}
+
                   {appointList.map(appointment => (
                     <AppointmentInfo key={appointment.id} appointment = {appointment} />
                   ))}
