@@ -1,12 +1,22 @@
 import { Col ,Row,Button,Card, Form } from "react-bootstrap"
+import {useState} from 'react';
 
 const AddAppointment = () => {
+
+	let [toogleForm, setToggleForm] = useState(false);
+
 	return (
 		<>
 			<Col md="8">
 				<Card className="mb-3">
-					<Card.Header>Add Appointment</Card.Header>
-					<Card.Body>
+					<Card.Header>Add Appointment 
+						<Button size="sm"
+							className="small float-end" 
+							// if toogle form is not visible show the toogleForm
+							onClick={()=> {setToggleForm(!toogleForm)}}>+</Button>
+					</Card.Header>
+					{ toogleForm &&
+						<Card.Body>
 						<Form>
 							<Row className="mb-3">
 								<Form.Group as ={Col}>
@@ -35,6 +45,7 @@ const AddAppointment = () => {
 								<Button variant= "primary">Submit</Button>
 						</Form>
 					</Card.Body>
+					}
 				</Card>
 			</Col>
 		</>			
