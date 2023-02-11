@@ -28,7 +28,6 @@ const AddAppointment = () => {
 									<Form.Control type = "text" placeholder= "Last Name"/>
 								</Form.Group>
 
-
 							</Row>
 								<Form.Group as ={Col} className = "mb-3">
 									<Form.Label>Appointment Date</Form.Label>
@@ -51,7 +50,6 @@ const AddAppointment = () => {
 		</>			
 
 	)
-
 
 }
 
